@@ -4,5 +4,5 @@
 #SBATCH --ntasks-per-node=32
 #SBATCH --mem=127000M
 #SBATCH --time=3:00
-#SBATCH --account=def-someuser
+#SBATCH --account=def-gigor
 nvidia-smi
