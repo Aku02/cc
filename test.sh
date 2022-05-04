@@ -5,6 +5,6 @@
 #SBATCH --gres=gpu:p100:1                # Number of GPUs (per node)
 #SBATCH --output=./output/log/%x-%j.out   # STDOUT
 #SBATCH --array=1-1%1   # 4 is the number of jobs in the chain
-conda init
-conda activate test_env
-python test.py
+nvidia-smi
+pwd
+python dummy.py
