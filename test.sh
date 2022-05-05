@@ -6,3 +6,9 @@
 #SBATCH --output=./output/%j.out   # STDOUT
 #SBATCH --array=1-1%1   # 4 is the number of jobs in the chain
 singularity build conda.sif Singularity.def
+
+
+export MYEXE=...
+export OMP_PROC_BIND=true
+
+./${MYEXE} 2>&1 | tee out.${SLURM_JOBID}
