@@ -1,4 +1,4 @@
-name: banmo-cu113
+name: banmo
 channels:
   - pytorch
   - conda-forge
@@ -189,4 +189,3 @@ dependencies:
     - yacs==0.1.8
     - yarl==1.7.2
     - zipp==3.7.0
-
