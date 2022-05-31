@@ -14,9 +14,9 @@ module load singularity
 
 # nvidia-smi
 
-SING_IMG=/home/akash02/projects/def-gigor/singularity/bonmo.sif
+SING_IMG=/home/akash02/projects/def-gigor/singularity/banmo.sif
 
 singularity run --nv $SING_IMG
 
-source activate banmo-cu113
+. activate /opt/conda/envs/banmo-cu113/
 conda list
