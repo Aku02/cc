@@ -16,6 +16,6 @@ nvidia-smi
 
 SING_IMG=/home/akash02/projects/def-gigor/singularity/banmo.sif
 
-singularity shell --nv $SING_IMG /bin/bash
+singularity shell --nv $SING_IMG /bin/bash --norc
 # export /opt/conda/bin>:$PATH
-source activate banmo-cu113
+source activate /opt/conda/bin 
