@@ -18,5 +18,6 @@ SING_IMG=/home/akash02/projects/def-gigor/singularity/banmo.sif
 
 singularity run --nv $SING_IMG
 
-. activate /opt/conda/envs/banmo-cu113/
+echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc
+echo "conda activate banmo-cu113" >> ~/.bashrc
 conda list
