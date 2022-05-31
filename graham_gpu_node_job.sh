@@ -16,7 +16,6 @@ module load singularity
 
 SING_IMG=/home/akash02/projects/def-gigor/singularity/banmo.sif
 
-singularity run --nv $SING_IMG
-export /opt/conda/bin>:$PATH
-
+singularity run --nv $SING_IMG /bin/bash
+# export /opt/conda/bin>:$PATH
 conda activate banmo-cu113
