@@ -12,7 +12,7 @@
 module load StdEnv/2020
 module load singularity
 
-# nvidia-smi
+nvidia-smi
 
 SING_IMG=/home/akash02/projects/def-gigor/singularity/banmo.sif
 
