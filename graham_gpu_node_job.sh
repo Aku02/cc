@@ -20,4 +20,4 @@ singularity run --nv $SING_IMG
 
 echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc
 export /opt/conda/bin>:$PATH
-conda list
+conda activate banmo-cu113
