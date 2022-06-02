@@ -19,6 +19,8 @@ From: gcr.io/kaggle-gpu-images/python:latest
   export MKL_NUM_THREADS=1
   export OPENBLAS_NUM_THREADS=1
 
+%post
+
   git clone https://github.com/facebookresearch/banmo.git --recursive
   cd banmo
   conda env create -f misc/banmo-cu113.yml
