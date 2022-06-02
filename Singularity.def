@@ -24,8 +24,6 @@ From: gcr.io/kaggle-gpu-images/python:latest
   git clone https://github.com/facebookresearch/banmo.git --recursive
   cd banmo
   conda env create -f misc/banmo-cu113.yml
-  conda init bash
-  source ~/.bashrc
   . activate banmo-cu113
   conda clean -ya
   pip install -e third_party/pytorch3d
