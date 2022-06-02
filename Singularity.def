@@ -2,6 +2,24 @@ Bootstrap: docker
 
 From: continuumio/miniconda3
 
+%environment
+
+  # use bash as default shell
+  SHELL=/bin/bash
+
+  # add CUDA paths
+  CPATH="/usr/local/cuda/include:$CPATH"
+  PATH="/usr/local/cuda/bin:$PATH"
+  LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+  CUDA_HOME="/usr/local/cuda"
+
+  # add Anaconda path
+  PATH="/usr/local/anaconda3/bin:$PATH"
+
+  export PATH LD_LIBRARY_PATH CPATH CUDA_HOME
+  export MKL_NUM_THREADS=1
+  export OPENBLAS_NUM_THREADS=1
+
 %files
     environment.yml
 
@@ -10,3 +28,5 @@ From: continuumio/miniconda3
 
 %runscript
     exec /opt/conda/envs/$(head -n 1 environment.yml | cut -f 2 -d ' ')/bin/"$@"
+    exec conda activate banmo-cu113
+    exec conda clean -ya

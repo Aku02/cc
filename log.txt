@@ -1,0 +1,183 @@
+# >>>>>>>>>>>>>>>>>>>>>> ERROR REPORT <<<<<<<<<<<<<<<<<<<<<<
+
+    Traceback (most recent call last):
+      File "/opt/conda/lib/python3.9/site-packages/conda/exceptions.py", line 1080, in __call__
+        return func(*args, **kwargs)
+      File "/opt/conda/lib/python3.9/site-packages/conda_env/cli/main.py", line 80, in do_call
+        exit_code = getattr(module, func_name)(args, parser)
+      File "/opt/conda/lib/python3.9/site-packages/conda_env/cli/main_create.py", line 88, in execute
+        spec = specs.detect(name=name, filename=get_filename(args.file), directory=os.getcwd())
+      File "/opt/conda/lib/python3.9/site-packages/conda_env/specs/__init__.py", line 43, in detect
+        if spec.can_handle():
+      File "/opt/conda/lib/python3.9/site-packages/conda_env/specs/yaml_file.py", line 18, in can_handle
+        self._environment = env.from_file(self.filename)
+      File "/opt/conda/lib/python3.9/site-packages/conda_env/env.py", line 166, in from_file
+        return from_yaml(yamlstr, filename=filename)
+      File "/opt/conda/lib/python3.9/site-packages/conda_env/env.py", line 143, in from_yaml
+        data = yaml_safe_load(yamlstr)
+      File "/opt/conda/lib/python3.9/site-packages/conda/common/serialize.py", line 67, in yaml_safe_load
+        return yaml.safe_load(string, version="1.2")
+      File "/opt/conda/lib/python3.9/site-packages/ruamel_yaml/main.py", line 980, in safe_load
+        return load(stream, SafeLoader, version)
+      File "/opt/conda/lib/python3.9/site-packages/ruamel_yaml/main.py", line 935, in load
+        return loader._constructor.get_single_data()
+      File "/opt/conda/lib/python3.9/site-packages/ruamel_yaml/constructor.py", line 109, in get_single_data
+        node = self.composer.get_single_node()
+      File "/opt/conda/lib/python3.9/site-packages/ruamel_yaml/composer.py", line 78, in get_single_node
+        document = self.compose_document()
+      File "/opt/conda/lib/python3.9/site-packages/ruamel_yaml/composer.py", line 104, in compose_document
+        self.parser.get_event()
+      File "/opt/conda/lib/python3.9/site-packages/ruamel_yaml/parser.py", line 163, in get_event
+        self.current_event = self.state()
+      File "/opt/conda/lib/python3.9/site-packages/ruamel_yaml/parser.py", line 239, in parse_document_end
+        token = self.scanner.peek_token()
+      File "/opt/conda/lib/python3.9/site-packages/ruamel_yaml/scanner.py", line 182, in peek_token
+        self.fetch_more_tokens()
+      File "/opt/conda/lib/python3.9/site-packages/ruamel_yaml/scanner.py", line 282, in fetch_more_tokens
+        return self.fetch_value()
+      File "/opt/conda/lib/python3.9/site-packages/ruamel_yaml/scanner.py", line 651, in fetch_value
+        raise ScannerError(
+    ruamel_yaml.scanner.ScannerError: mapping values are not allowed here
+      in "<unicode string>", line 26, column 66:
+         ... le" content="{&quot;groups&quot;: [], &quot;environmentKey&quot; ...
+                                             ^ (line: 26)
+
+`$ /opt/conda/bin/conda-env create -f banmo-cu113.yml`
+
+  environment variables:
+                 CIO_TEST=<not set>
+       CMAKE_LIBRARY_PATH=/cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/gcccore/9.3.
+                          0/lib64
+        CMAKE_PREFIX_PATH=/cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/mii/1.1.1:/c
+                          vmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compiler/intel
+                          2020/openmpi/4.0.3:/cvmfs/soft.computecanada.ca/easybuild/software/202
+                          0/avx2/Core/libfabric/1.10.1:/cvmfs/soft.computecanada.ca/easybuild/so
+                          ftware/2020/avx2/Core/ucx/1.8.0:/cvmfs/restricted.computecanada.ca/eas
+                          ybuild/software/2020/Core/intel/2020.1.217/compilers_and_libraries_202
+                          0.1.217/linux:/cvmfs/soft.computecanada.ca/easybuild/software/2020/Cor
+                          e/gcccore/9.3.0
+  CONDA_AUTO_UPDATE_CONDA=false
+               CONDA_ROOT=/opt/conda
+                    CPATH=/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compiler/int
+                          el2020/openmpi/4.0.3/include:/cvmfs/soft.computecanada.ca/easybuild/so
+                          ftware/2020/avx2/Core/libfabric/1.10.1/include:/cvmfs/soft.computecana
+                          da.ca/easybuild/software/2020/avx2/Core/ucx/1.8.0/include:/cvmfs/soft.
+                          computecanada.ca/easybuild/software/2020/Core/imkl/2020.1.217/mkl/incl
+                          ude/fftw:/cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/imk
+                          l/2020.1.217/mkl/include:/cvmfs/restricted.computecanada.ca/easybuild/
+                          software/2020/Core/intel/2020.1.217/compilers_and_libraries_2020.1.217
+                          /linux/tbb/include
+           CURL_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
+      EASYBUILD_BUILDPATH=/tmp/akash02
+                 INFOPATH=/cvmfs/soft.computecanada.ca/gentoo/2020/usr/share/binutils-
+                          data/x86_64-pc-linux-gnu/2.33.1/info::
+          LD_LIBRARY_PATH=/.singularity.d/libs
+             LIBRARY_PATH=/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compiler/int
+                          el2020/openmpi/4.0.3/lib:/cvmfs/soft.computecanada.ca/easybuild/softwa
+                          re/2020/avx2/Core/libfabric/1.10.1/lib:/cvmfs/soft.computecanada.ca/ea
+                          sybuild/software/2020/avx2/Core/ucx/1.8.0/lib:/cvmfs/soft.computecanad
+                          a.ca/easybuild/software/2020/Core/imkl/2020.1.217/mkl/lib/intel64:/cvm
+                          fs/soft.computecanada.ca/easybuild/software/2020/Core/imkl/2020.1.217/
+                          lib/intel64:/cvmfs/restricted.computecanada.ca/easybuild/software/2020
+                          /Core/intel/2020.1.217/compilers_and_libraries_2020.1.217/linux/tbb/li
+                          b/intel64/gcc4.8
+        LMOD_PACKAGE_PATH=/cvmfs/soft.computecanada.ca/config/lmod/
+                  MANPATH=/opt/software/slurm/current/share/man:/opt/software/slurm/current/shar
+                          e/man:/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compil
+                          er/intel2020/openmpi/4.0.3/share/man:/cvmfs/soft.computecanada.ca/easy
+                          build/software/2020/avx2/Core/libfabric/1.10.1/share/man:/cvmfs/restri
+                          cted.computecanada.ca/easybuild/software/2020/Core/intel/2020.1.217/co
+                          mpilers_and_libraries_2020.1.217/linux/man/common:/cvmfs/soft.computec
+                          anada.ca/easybuild/software/2020/Core/gcccore/9.3.0/share/man:/cvmfs/s
+                          oft.computecanada.ca/gentoo/2020/usr/share/gcc-data/x86_64-pc-linux-gn
+                          u/9.3.0/man:/cvmfs/soft.computecanada.ca/gentoo/2020/usr/share/binutil
+                          s-data/x86_64-pc-linux-gnu/2.33.1/man:/cvmfs/soft.computecanada.ca/gen
+                          too/2020/usr/share/man:/cvmfs/soft.computecanada.ca/custom/software/lm
+                          od/lmod/share/man::
+               MODULEPATH=/opt/software/modulefiles:/cvmfs/soft.computecanada.ca/easybuild/modul
+                          es/2020/avx2/MPI/intel2020/openmpi4:/cvmfs/soft.computecanada.ca/easyb
+                          uild/modules/2020/avx2/Compiler/intel2020:/home/akash02/.local/easybui
+                          ld/modules/2020/avx2/Core:/home/akash02/.local/easybuild/modules/2020/
+                          Core:/cvmfs/soft.computecanada.ca/easybuild/modules/2020/avx2/Core:/cv
+                          mfs/soft.computecanada.ca/easybuild/modules/2020/Core:/cvmfs/soft.comp
+                          utecanada.ca/custom/modules
+                     PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
+                          :/bin
+          PKG_CONFIG_PATH=/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compiler/int
+                          el2020/openmpi/4.0.3/lib/pkgconfig:/cvmfs/soft.computecanada.ca/easybu
+                          ild/software/2020/avx2/Core/libfabric/1.10.1/lib/pkgconfig:/cvmfs/soft
+                          .computecanada.ca/easybuild/software/2020/avx2/Core/ucx/1.8.0/lib/pkgc
+                          onfig:/cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/imkl/2
+                          020.1.217/mkl/bin/pkgconfig
+ PMIX_DSTORE_21_BASE_PATH=/var/spool/slurmd/pmix.60596697.0//pmix_dstor_ds21_27516
+PMIX_DSTORE_ESH_BASE_PATH=/var/spool/slurmd/pmix.60596697.0//pmix_dstor_ds12_27516
+               PYTHONPATH=/cvmfs/soft.computecanada.ca/custom/python/site-packages
+       REQUESTS_CA_BUNDLE=<not set>
+            SSL_CERT_FILE=/etc/pki/tls/certs/ca-bundle.crt
+                USER_PATH=/opt/software/slurm/current/bin:/opt/software/bin:/opt/software/slurm/
+                          bin:/opt/software/singularity-3.8/bin:/opt/software/slurm/current/bin:
+                          /cvmfs/soft.computecanada.ca/easybuild/software/2020/Core/mii/1.1.1/bi
+                          n:/cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Compiler/i
+                          ntel2020/openmpi/4.0.3/bin:/cvmfs/soft.computecanada.ca/easybuild/soft
+                          ware/2020/avx2/Core/libfabric/1.10.1/bin:/cvmfs/soft.computecanada.ca/
+                          easybuild/software/2020/avx2/Core/ucx/1.8.0/bin:/cvmfs/restricted.comp
+                          utecanada.ca/easybuild/software/2020/Core/intel/2020.1.217/compilers_a
+                          nd_libraries_2020.1.217/linux/bin/intel64:/cvmfs/soft.computecanada.ca
+                          /easybuild/software/2020/Core/gcccore/9.3.0/bin:/cvmfs/soft.computecan
+                          ada.ca/easybuild/bin:/cvmfs/soft.computecanada.ca/custom/bin:/cvmfs/so
+                          ft.computecanada.ca/gentoo/2020/usr/sbin:/cvmfs/soft.computecanada.ca/
+                          gentoo/2020/usr/bin:/cvmfs/soft.computecanada.ca/gentoo/2020/sbin:/cvm
+                          fs/soft.computecanada.ca/gentoo/2020/bin:/cvmfs/soft.computecanada.ca/
+                          custom/bin/computecanada:/opt/software/bin:/opt/software/slurm/bin:/us
+                          r/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/akash02/.local/bi
+                          n:/home/akash02/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/
+                          local/sbin
+__LMOD_Priority_MODULEPATH=/opt/software/modulefiles:-10
+__LMOD_REF_COUNT_MODULEPATH=/opt/software/modulefiles:2;/cvmfs/soft.computecanada.ca/easybuild/mod
+                          ules/2020/avx2/MPI/intel2020/openmpi4:1;/cvmfs/soft.computecanada.ca/e
+                          asybuild/modules/2020/avx2/Compiler/intel2020:1;/home/akash02/.local/e
+                          asybuild/modules/2020/avx2/Core:1;/home/akash02/.local/easybuild/modul
+                          es/2020/Core:1;/cvmfs/soft.computecanada.ca/easybuild/modules/2020/avx
+                          2/Core:1;/cvmfs/soft.computecanada.ca/easybuild/modules/2020/Core:1;/c
+                          vmfs/soft.computecanada.ca/custom/modules:1
+
+     active environment : None
+       user config file : /home/akash02/.condarc
+ populated config files :
+          conda version : 4.11.0
+    conda-build version : not installed
+         python version : 3.9.10.final.0
+       virtual packages : __cuda=11.4=0
+                          __linux=3.10.0=0
+                          __glibc=2.31=0
+                          __unix=0=0
+                          __archspec=1=x86_64
+       base environment : /opt/conda  (read only)
+      conda av data dir : /opt/conda/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /opt/conda/pkgs
+                          /home/akash02/.conda/pkgs
+       envs directories : /home/akash02/.conda/envs
+                          /opt/conda/envs
+               platform : linux-64
+             user-agent : conda/4.11.0 requests/2.27.1 CPython/3.9.10 Linux/3.10.0-1160.59.1.el7.x86_64 debian/11 glibc/2.31
+                UID:GID : 3118536:3118536
+             netrc file : None
+           offline mode : False
+
+
+An unexpected error has occurred. Conda has prepared the above report.
+
+If submitted, this report will be used by core maintainers to improve
+future releases of conda.
+Would you like conda to send this report to the core maintainers?
+
+[y/N]: N
+
+No report sent. To permanently opt-out, use
+
+    $ conda config --set report_errors false
