@@ -1,41 +1,31 @@
 Bootstrap: docker
 
-From: continuumio/miniconda3
-
+From: gcr.io/kaggle-gpu-images/python:latest
 %environment
 
   # use bash as default shell
-  SHELL=/bin/bash
 
-  apt-get clean
-  apt-get update \
-   && apt-get install -y wget git vim build-essential cmake
 
   # add CUDA paths
-  CPATH="/usr/local/cuda/include:$CPATH"
-  PATH="/usr/local/cuda/bin:$PATH"
-  LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
-  CUDA_HOME="/usr/local/cuda"
+  CPATH="/usr/local/cuda-11.0/include:$CPATH"
+  PATH="/usr/local/cuda-11.0/bin:$PATH"
+  LD_LIBRARY_PATH="/usr/local/cuda-11.0/targets/x86_64-linux/lib:$LD_LIBRARY_PATH"
+  CUDA_HOME="/usr/local/cuda-11.0"
 
   # add Anaconda path
-  PATH="/usr/local/anaconda3/bin:$PATH"
+  PATH="/opt/conda/bin:$PATH"
 
   export PATH LD_LIBRARY_PATH CPATH CUDA_HOME
   export MKL_NUM_THREADS=1
   export OPENBLAS_NUM_THREADS=1
 
-%files
-    environment.yml
-
-%post
-    /opt/conda/bin/conda env create -f environment.yml
-
 %runscript
-    exec /opt/conda/envs/$(head -n 1 environment.yml | cut -f 2 -d ' ')/bin/"$@"
-    conda activate banmo-cu113
-    conda clean -ya
+
     git clone https://github.com/facebookresearch/banmo.git --recursive
     cd banmo
+    conda env create -f misc/banmo-cu113.yml
+    conda activate banmo-cu113
+    conda clean -ya
     pip install -e third_party/pytorch3d
     pip install -e third_party/kmeans_pytorch
     python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
