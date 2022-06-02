@@ -26,7 +26,7 @@ From: gcr.io/kaggle-gpu-images/python:latest
   conda env create -f misc/banmo-cu113.yml
   conda init bash
   source ~/.bashrc
-  conda activate banmo-cu113
+  . activate banmo-cu113
   conda clean -ya
   pip install -e third_party/pytorch3d
   pip install -e third_party/kmeans_pytorch
