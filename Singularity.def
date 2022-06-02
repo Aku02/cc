@@ -31,7 +31,8 @@ From: gcr.io/kaggle-gpu-images/python:latest
   python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
   conda init bash
   source ~/.bashrc
+  conda activate banmo-cu113
 
 %runscript
-  conda activate banmo-cu113
+  which python
     
