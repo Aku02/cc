@@ -19,13 +19,15 @@ From: gcr.io/kaggle-gpu-images/python:latest
   export MKL_NUM_THREADS=1
   export OPENBLAS_NUM_THREADS=1
 
-%runscript
+  git clone https://github.com/facebookresearch/banmo.git --recursive
+  cd banmo
+  conda env create -f misc/banmo-cu113.yml
+  conda activate banmo-cu113
+  conda clean -ya
+  pip install -e third_party/pytorch3d
+  pip install -e third_party/kmeans_pytorch
+  python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
 
-    git clone https://github.com/facebookresearch/banmo.git --recursive
-    cd banmo
-    conda env create -f misc/banmo-cu113.yml
-    conda activate banmo-cu113
-    conda clean -ya
-    pip install -e third_party/pytorch3d
-    pip install -e third_party/kmeans_pytorch
-    python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
+%runscript
+  conda activate banmo-cu113
+    
